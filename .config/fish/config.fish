@@ -1,31 +1,24 @@
-# eval setting
-eval "rbenv init - | source"
-eval "pyenv init - | source"
-eval "pyenv virtualenv-init - | source"
-eval "nodenv init - | source"
+if status is-interactive
+    # path
+    eval (/opt/homebrew/bin/brew shellenv)
 
-# Path setting
-set -x PATH /usr/local/bin $PATH
-set -x PATH /usr/local/Cellar/git/2.15.1_1 $PATH
-set -x PATH $HOME/.pyenv/shims $PATH
-set -x PYENV_ROOT $HOME/.pyenv
-set -x PATH $PYENV_ROOT/bin $PATH
-set -x XDG_CONFIG_HOME $HOME/.config
-set -x PATH $HOME/.nodenv/bin $PATH
-set -g fish_user_paths "/usr/local/opt/gettext/bin" $fish_user_paths
+    # Fish git prompt
+    set __fish_git_prompt_showdirtystate 'yes'
+    set __fish_git_prompt_showstashstate 'yes'
+    set __fish_git_prompt_showuntrackedfiles 'yes'
+    set __fish_git_prompt_showupstream 'yes'
+    set __fish_git_prompt_color_branch yellow
+    set __fish_git_prompt_color_upstream_ahead green
+    set __fish_git_prompt_color_upstream_behind red
 
-# alias
-alias vi='nvim'
-alias vim='nvim'
-alias nvi='nvim'
-alias rb='ruby'
-alias g='git'
-alias ga='git add'
-alias gb='git branch'
-alias gcm='git commit'
-alias gco='git checkout'
-alias gps='git push'
-alias gpsom='git push origin master'
-alias gplom='git pull origin master'
-alias gs='git status'
-alias be='bundle exec'
+    # Status Chars
+    set __fish_git_prompt_char_dirtystate '⚡'
+    set __fish_git_prompt_char_stagedstate '→'
+    set __fish_git_prompt_char_untrackedfiles '☡'
+    set __fish_git_prompt_char_stashstate '↩'
+    set __fish_git_prompt_char_upstream_ahead '+'
+    set __fish_git_prompt_char_upstream_behind '-'
+
+    # asdf
+    source ~/.asdf/asdf.fish
+end
