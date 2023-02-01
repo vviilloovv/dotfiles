@@ -21,4 +21,25 @@ if status is-interactive
 
     # asdf
     source ~/.asdf/asdf.fish
+
+    # abbr
+    abbr -a g git
+    abbr -a gs git status
+    abbr -a ga git add
+    abbr -a gl git log
+    abbr -a gco git checkout
+    abbr -a gcm git commit -m
+    abbr -a gsw git switch
+    abbr -a gpl git pull
+    abbr -a gps git push
+
+    abbr -a d docker
+    abbr -a dcm docker compose
+    abbr -a dcn docker container
+    abbr -a di docker image
 end
+
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/vviilloovv/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
